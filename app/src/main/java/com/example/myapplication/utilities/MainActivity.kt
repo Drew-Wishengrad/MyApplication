@@ -1,11 +1,9 @@
-package com.example.myapplication
+package com.example.myapplication.utilities
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.myapplication.databinding.ActivityMainBinding
+import com.example.myapplication.util.myFirstClass
 
 class MainActivity : AppCompatActivity() {
 
@@ -17,5 +15,26 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        saySomething()
+
+        val myVar: IntArray
+
+        val intent = parent
+
         }
+
+    private fun saySomething() {
+        val myFirstClass = myFirstClass()
+        myFirstClass.saySomething()
+    }
+
+    fun myFunc1() {
+
+    }
+
+    fun myFunc2() {
+
+    }
+
     }

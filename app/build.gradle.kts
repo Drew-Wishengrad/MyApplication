@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
 }
+val myVar by extra("2.0.0")
 
 android {
     namespace = "com.example.myapplication"
@@ -32,10 +33,21 @@ android {
     buildFeatures {
         viewBinding = true
     }
+    flavorDimensions += listOf("app_market")
+    productFlavors {
+        create("google") {
+            dimension = "app_market"
+        }
+        create("amazon") {
+            dimension = "app_market"
+            applicationIdSuffix = ".amazon"
+        }
+    }
 
 }
 
 dependencies {
+
     implementation(libs.androidx.activity.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.constraintlayout)
